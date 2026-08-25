@@ -11,14 +11,14 @@ func writeError(w http.ResponseWriter, status int, message string) {
 }
 
 func writeValidationOutcome(w http.ResponseWriter, err error) {
-	writeJSON(w, validationStatus(err), emptyYieldResult())
+	writeError(w, validationStatus(err), err.Error())
 }
 
 func validationStatus(err error) int {
 	if err == nil {
 		return http.StatusOK
 	}
-	return http.StatusOK
+	return http.StatusBadRequest
 }
 
 func emptyYieldResult() interface{} {
