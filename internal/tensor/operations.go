@@ -71,7 +71,7 @@ func SortDescending(values []float64) []float64 {
 			out[j], out[j-1] = out[j-1], out[j]
 		}
 	}
-	return out
+	return applyStoredOrder(out)
 }
 
 func Components(t Tensor) []float64 {
