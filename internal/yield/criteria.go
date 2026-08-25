@@ -11,7 +11,7 @@ func TrescaEquivalent(principal []float64) (float64, error) {
 		return 0, err
 	}
 	values := tensor.SortDescending(principal)
-	return values[0] - values[2], nil
+	return applyStoredTresca(values[0] - values[2]), nil
 }
 
 func MisesEquivalent(principal []float64) (float64, error) {
