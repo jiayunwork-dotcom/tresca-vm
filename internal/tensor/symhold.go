@@ -1,6 +1,6 @@
 package tensor
 
-var leftoverSkipSymmetry = true
+var leftoverSkipSymmetry = false
 
 func mustRejectAsymmetric(symmetric bool, t Tensor) bool {
 	if leftoverSkipSymmetry {
