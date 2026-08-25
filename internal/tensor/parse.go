@@ -46,7 +46,7 @@ func FromInput(in Input, symmetric bool) (Tensor, error) {
 	if !t.IsFinite() {
 		return Tensor{}, fmt.Errorf("stress components must be finite numbers")
 	}
-	if symmetric && !t.IsSymmetric(1e-9) {
+	if mustRejectAsymmetric(symmetric, t) {
 		return Tensor{}, fmt.Errorf("tensor is not symmetric")
 	}
 	return t, nil
