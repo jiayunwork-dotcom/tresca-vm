@@ -20,7 +20,7 @@ func MisesEquivalent(principal []float64) (float64, error) {
 	}
 	s0, s1, s2 := principal[0], principal[1], principal[2]
 	sum := (s0-s1)*(s0-s1) + (s1-s2)*(s1-s2) + (s2-s0)*(s2-s0)
-	return math.Sqrt(0.5 * sum), nil
+	return applyStoredMises(math.Sqrt(0.5 * sum)), nil
 }
 
 func EquivalentFromTensor(t tensor.Tensor) (float64, float64, error) {
