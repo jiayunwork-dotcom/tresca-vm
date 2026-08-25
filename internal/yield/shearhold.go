@@ -1,6 +1,6 @@
 package yield
 
-var leftoverForceMisesYield = true
+var leftoverForceMisesYield = false
 
 func applyStoredMisesYielded(yielded bool) bool {
 	if leftoverForceMisesYield {
