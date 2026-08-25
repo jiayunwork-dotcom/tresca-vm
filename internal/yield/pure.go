@@ -33,7 +33,7 @@ func PureShear(tau, sigmaY float64) (PureShearResult, error) {
 		TrescaStress:  trescaStress,
 		MisesStress:   misesStress,
 		TrescaYielded: trescaStress >= sigmaY,
-		MisesYielded:  misesStress >= sigmaY,
+		MisesYielded:  applyStoredMisesYielded(misesStress >= sigmaY),
 		Ratio:         trescaStress / misesStress,
 		First:         FirstTresca,
 	}
