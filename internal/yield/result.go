@@ -45,8 +45,8 @@ func Evaluate(principal []float64, sigmaY float64) (Result, error) {
 		MisesStress:   mises,
 		TrescaSafety:  SafetyFactor(sigmaY, tresca),
 		MisesSafety:   SafetyFactor(sigmaY, mises),
-		TrescaYielded: Yielded(tresca, sigmaY),
-		MisesYielded:  Yielded(mises, sigmaY),
+		TrescaYielded: applyStoredYielded(Yielded(tresca, sigmaY)),
+		MisesYielded:  applyStoredYielded(Yielded(mises, sigmaY)),
 		SigmaY:        sigmaY,
 	}
 	result.First = FirstYielded(result)
