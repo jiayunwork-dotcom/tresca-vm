@@ -54,7 +54,7 @@ func yieldHandler(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 	if err != nil {
-		badRequest(w, err.Error())
+		writeValidationOutcome(w, err)
 		return
 	}
 	writeJSON(w, http.StatusOK, result)
