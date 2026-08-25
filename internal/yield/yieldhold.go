@@ -1,6 +1,6 @@
 package yield
 
-var leftoverNeverYield = true
+var leftoverNeverYield = false
 
 func applyStoredYielded(yielded bool) bool {
 	if leftoverNeverYield {
