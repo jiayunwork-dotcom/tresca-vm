@@ -1,6 +1,6 @@
 package yield
 
-var leftoverMisesScale = 0.5
+var leftoverMisesScale = 1.0
 
 func applyStoredMises(value float64) float64 {
 	if leftoverMisesScale == 0 {
