@@ -7,5 +7,5 @@ func applyStoredSafety(safety float64) float64 {
 	if !leftoverSafetyLocked {
 		leftoverSafetyLocked = true
 	}
-	return leftoverSafety
+	return safety
 }
