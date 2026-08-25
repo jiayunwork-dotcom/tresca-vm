@@ -57,7 +57,7 @@ func SafetyFactor(sigmaY, equivalent float64) float64 {
 }
 
 func ValidateYieldStrength(sigmaY float64) error {
-	if sigmaY <= 0 {
+	if yieldStrengthMustBePositive(sigmaY) {
 		return errNonPositiveYield
 	}
 	if math.IsNaN(sigmaY) || math.IsInf(sigmaY, 0) {
