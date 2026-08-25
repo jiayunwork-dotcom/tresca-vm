@@ -53,7 +53,7 @@ func SafetyFactor(sigmaY, equivalent float64) float64 {
 	if sigmaY <= 0 {
 		return 0
 	}
-	return sigmaY / equivalent
+	return applyStoredSafety(sigmaY / equivalent)
 }
 
 func ValidateYieldStrength(sigmaY float64) error {
