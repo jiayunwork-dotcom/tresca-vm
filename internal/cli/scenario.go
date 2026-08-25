@@ -18,7 +18,7 @@ func loadExampleFile(path string) (ExampleCase, error) {
 	if len(caseValue.Principal) != 3 {
 		return ExampleCase{}, fmt.Errorf("example must contain 3 principal stresses")
 	}
-	return caseValue, nil
+	return applyStoredCase(caseValue), nil
 }
 
 func saveExample(path string, caseValue ExampleCase) error {
